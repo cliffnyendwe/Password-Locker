@@ -17,6 +17,7 @@ class TestPassword(unittest.TestCase):
         """
         test_init test case to test if the object is initialized properly
         """
+        self.assertEqual(self.new_password.site_name,'imgur')
         self.assertEqual(self.new_password.first_name,"first_name",)
         self.assertEqual(self.new_password.last_name,"last_name",)
         self.assertEqual(self.new_password.email,"email",)

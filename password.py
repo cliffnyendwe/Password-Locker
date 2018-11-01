@@ -15,5 +15,11 @@ class Password:
         save_password method saves pasword objects into password_list
         """
         Password.password_list.append(self)
+    def test_save_multiple_password(self)
+        """
+        test_save_multiple_password to check if we can save multiple password to our password_list
+        """
+        self.new_password.save_password()
+        test_password = Password("Test","user")
 
 
