@@ -7,7 +7,7 @@ class TestPassword(unittest.TestCase):
 
     Args:
         unitest.TestCase: TestCase class that helps in creating test cases
-        """
+    """
     def setUp(self):
         """
         Set up method to run before each test cases.
@@ -54,13 +54,38 @@ class TestPassword(unittest.TestCase):
         self.new_password.delete_password()
         self.assertEqual(len(Password.password_list),1)
 
+    def test_find_password_by_email(self):
+        '''
+        test to check if we find an email by password and display information
+        '''
+        self.new_password.save_password()
+        test_password = Password("Test","user","email","password") # new password
+        test_password.save_password()
 
+        found_password = Password.find_by_email("email")
 
+        self.assertEqual(found_password.email,test_password.email)
+        
+    def test_password_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the password.
+        '''
 
+        self.new_password.save_password()
+        test_password = Password("Test","user","email","password") 
+        test_password.save_password()
 
+        password_exists = Password.password_exist("email")
 
+        self.assertTrue(password_exists)
 
-    
+    def test_display_all_password(self):
+        '''
+        method that returns a list of all password saved
+        '''
+
+        self.assertEqual(Password.display_password(),Password.password_list)
+
 
 
 
