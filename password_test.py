@@ -48,8 +48,12 @@ class TestPassword(unittest.TestCase):
         """
         test_delete_password to test if we can remove a password from password list
         """
+        self.new_password.save_password()
+        test_password = Password("Test","user","email","password")
+        test_password.save_password()
         self.new_password.delete_password()
-        
+        self.assertEqual(len(Password.password_list),1)
+
 
 
 
