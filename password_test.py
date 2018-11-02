@@ -1,4 +1,5 @@
 import unittest
+import pyperclip
 from password import Password
 
 class TestPassword(unittest.TestCase):
@@ -85,6 +86,17 @@ class TestPassword(unittest.TestCase):
         '''
 
         self.assertEqual(Password.display_password(),Password.password_list)
+
+    def test_copy_email(self):
+        '''
+        Test to confirm that we are copying the email address from a found contact
+        '''
+
+        self.new_password.save_password()
+        Password.copy_email("email")
+
+        self.assertEqual(self.new_password.email,pyperclip.paste())
+
 
 
 

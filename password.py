@@ -1,4 +1,6 @@
+import pyperclip
 class Password:
+    
     """
     clas that generates new instances of password
     """
@@ -62,6 +64,11 @@ class Password:
         method that returns the password list
         '''
         return cls.password_list
+
+    @classmethod
+    def copy_email(cls,email):
+        password_found = Password.find_by_email(email)
+        pyperclip.copy(password_found.email)
 
     
 
