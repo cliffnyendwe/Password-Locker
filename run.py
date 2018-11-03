@@ -3,9 +3,9 @@ from password import Password
 
 def create_password(fname,lname,email,password):
     '''
-    Function to create a new contact
+    Function to create a new password
     '''
-    new_contact = Password(fname,lname,email,password)
+    new_password = Password(fname,lname,email,password)
     return new_password
 
 def save_password(password):
@@ -21,21 +21,21 @@ def del_password(password):
     password.delete_password()
 
 
-def find_contact(number):
+def find_password(email):
     '''
-    Function that finds a contact by number and returns the contact
+    Function that finds a password by number and returns the password
     '''
-    return Contact.find_by_number(number)
-def check_existing_contacts(number):
+    return Password.find_by_number(email)
+def check_existing_password(email):
     '''
-    Function that check if a contact exists with that number and return a Boolean
+    Function that check if a password exists with that number and return a Boolean
     '''
-    return Contact.contact_exist(number)
-def display_contacts():
+    return Password.password_exist(email)
+def display_password():
     '''
-    Function that returns all the saved contacts
+    Function that returns all the saved password
     '''
-    return Contact.display_contacts()
+    return Password.display_password()
 
 
 
@@ -54,7 +54,7 @@ def main():
         short_code = input().lower()
 
         if short_code == 'cc':
-            print("New Contact")
+            print("New Account")
             print("-"*10)
 
             print ("First name ....")
@@ -63,26 +63,26 @@ def main():
             print("Last name ...")
             l_name = input()
 
-            print("Phone number ...")
-            p_number = input()
+            print("Email ")
+            email = input()
 
-            print("Email address ...")
-            e_address = input()
+            print("Password")
+            password = input()
 
 
-            save_contacts(create_contact(f_name,l_name,p_number,e_address)) # create and save new contact.
+            save_password(create_password(f_name,l_name,email,password))
             print ('\n')
-            print(f"New Contact {f_name} {l_name} created")
+            print(f"New Account {f_name} {l_name} {email} {password} created")
             print ('\n')
 
         elif short_code == 'dc':
 
-            if display_contacts():
-                print("Here is a list of all your contacts")
+            if display_password():
+                print("Here is a list of all your details")
                 print('\n')
 
-                for contact in display_contacts():
-                    print(f"{contact.first_name} {contact.last_name} .....{contact.phone_number}")
+                for password in display_password():
+                    print(f"{password.first_name} {password.last_name} .....{password.email} {password.password}")
 
                 print('\n')
             else:
@@ -92,21 +92,21 @@ def main():
 
         elif short_code == 'fc':
 
-            print("Enter the number you want to search for")
+            print("Enter the name,email you want to search for")
 
-            search_number = input()
-            if check_existing_contacts(search_number):
-                search_contact = find_contact(search_number)
-                rint(f"{search_contact.first_name} {search_contact.last_name}")
+            search_email = input()
+            if check_existing_password(search_):
+                search_password = find_password(search_email)
+                rint(f"{search_password.first_name} {search_password.last_name} {search_password.email} {search_password.password}")
                 print('-' * 20)
 
-                print(f"Phone number.......{search_contact.phone_number}")
-                print(f"Email address.......{search_contact.email}")
+                print(f"Phone number.......{search_password.email}")
+                print(f"Email address.......{search_password.email}")
             else:
-                print("That contact does not exist")
+                print("That details does not exist")
 
         elif short_code == "ex":
-            print("Bye .......")
+            print("Thanks for your time .......")
             break
         else:
             print("I really didn't get that. Please use the short codes")
