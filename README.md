@@ -27,7 +27,7 @@ Download program files at:https://github.com/cliffnyendwe/Password-Locker.git
 # Github-link
 https://github.com/cliffnyendwe/Password-Locker.git
 
-#Motivation
+# Motivation
 To make it easy for people to generate their accounts and passwords
 
 # Prerequisites
