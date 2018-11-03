@@ -41,10 +41,10 @@ def display_password():
 
 
 def main():
-    print("Hello Welcome to your contact list. What is your name?")
+    print("Hi welcome to your Password Locker. What is your name?")
     user_name = input()
 
-    print(f"Hello {user_name}. what would you like to do?")
+    print(f"Hi {user_name}. Wish like doing anything?")
         
     print('\n')
 
@@ -78,7 +78,7 @@ def main():
         elif short_code == 'dc':
 
             if display_password():
-                print("Here is a list of all your details")
+                print("Here is a list of all your Account details")
                 print('\n')
 
                 for password in display_password():
@@ -87,17 +87,17 @@ def main():
                 print('\n')
             else:
                 print('\n')
-                print("You dont seem to have any contacts saved yet")
+                print("You dont seem to have any details in your account saved yet")
                 print('\n')
 
         elif short_code == 'fc':
 
             print("Enter the name,email you want to search for")
 
-            search_email = input()
-            if check_existing_password(search_):
+            search_password = input()
+            if check_existing_password(search_password):
                 search_password = find_password(search_email)
-                rint(f"{search_password.first_name} {search_password.last_name} {search_password.email} {search_password.password}")
+                print(f"{search_password.first_name} {search_password.last_name} {search_password.email} {search_password.password}")
                 print('-' * 20)
 
                 print(f"Phone number.......{search_password.email}")
@@ -106,10 +106,10 @@ def main():
                 print("That details does not exist")
 
         elif short_code == "ex":
-            print("Thanks for your time .......")
+            print(" .......")
             break
         else:
-            print("I really didn't get that. Please use the short codes")
+            print("The server does not support that language. Please use the short codes")
 if __name__ == '__main__':
 
     main()
