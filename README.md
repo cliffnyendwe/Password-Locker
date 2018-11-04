@@ -8,6 +8,7 @@ Password Locker is an application that allows one to generate and store password
 Download program files at:https://github.com/cliffnyendwe/Password-Locker.git
 
 # Setup/Installation Requirements
+
 * Open the webpage (https://github.com/cliffnyendwe/Password-Locker.git) and download the project.
 *  Open it on your terminal.
 *  Once you run the account.py file you'll be greeted with the option to add an account.
@@ -15,6 +16,7 @@ Download program files at:https://github.com/cliffnyendwe/Password-Locker.git
 *  You can now log in to the account you just created and start using the password locker to create and     generate password for your various accounts.
 
 # Specifications
+
 * To create a password locker account with details - just fill in the details.
 * Store existing login credentials. For example, email account credentials.
 * Generate a password for a new credential/account. For example, let's assume that you have not yet signed up for an email account, you can generate a password that you will use when you sign up for an Instagram account.

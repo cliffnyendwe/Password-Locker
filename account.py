@@ -63,7 +63,7 @@ def main():
             print("Last name ...")
             l_name = input()
 
-            print("Email ")
+            print("Email Address ")
             email = input()
 
             print("Password")
