@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.6
 from password import Password
+import pyperclit
 
 def create_password(fname,lname,email,password):
     '''
